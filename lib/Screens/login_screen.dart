@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
               contentPadding: EdgeInsets.only(top: 14.0),
               prefixIcon: Icon(
                 Icons.email,
-                color: Colors.white,
+                color: Colors.black54,
               ),
               hintText: 'Enter your Email',
               hintStyle: kHintTextStyle,
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _passwordController,
             obscureText: true,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
               contentPadding: EdgeInsets.only(top: 14.0),
               prefixIcon: Icon(
                 Icons.lock,
-                color: Colors.white,
+                color: Colors.black54,
               ),
               hintText: 'Enter your Password',
               hintStyle: kHintTextStyle,
@@ -106,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Checkbox(
               value: _rememberMe,
               checkColor: Colors.green,
-              activeColor: Colors.white,
+              activeColor: Colors.black,
               onChanged: (value) {
                 setState(() {
                   _rememberMe = value;
@@ -162,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        color: Colors.white,
+        color: Colors.black87,
         child: Text(
           'LOGIN',
           style: TextStyle(
@@ -258,7 +258,7 @@ class _LoginScreenState extends State<LoginScreen> {
             TextSpan(
               text: 'Don\'t have an Account? ',
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 15.0,
                 fontWeight: FontWeight.w400,
               ),
@@ -266,7 +266,7 @@ class _LoginScreenState extends State<LoginScreen> {
             TextSpan(
               text: 'Sign Up',
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 15.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -331,7 +331,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text(
                         'Sign In',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontFamily: 'BreeSerif',
                           fontSize: 40.0,
                           fontWeight: FontWeight.bold,

@@ -19,7 +19,7 @@ class StartPageState extends State<StartPage> {
       loadData();
     }  
       Future<Timer> loadData() async {
-        return new Timer(Duration(seconds: 3), onDoneLoading);
+        return new Timer(Duration(seconds: 2), onDoneLoading);
       }
     
       onDoneLoading() {
@@ -61,7 +61,7 @@ class StartPageState extends State<StartPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                            ColorizeAnimatedTextKit(
-                               duration: Duration(milliseconds: 3000),
+                               duration: Duration(milliseconds: 2000),
                                 onTap: () {
                                   print("Tap Event");
                                 },                 
@@ -74,9 +74,9 @@ class StartPageState extends State<StartPage> {
                                     fontSize: 50.0
                                 ),
                                 colors: [                           
-                                  Colors.white,
+                                  Colors.black,
                                   Colors.white10,
-                                  Colors.white,
+                                  Colors.black,
                                 ],
                                 textAlign: TextAlign.start,
                                 alignment: AlignmentDirectional
