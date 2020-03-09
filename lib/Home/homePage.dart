@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_test/Database/firebase.dart';
+import 'package:login_test/Screens/login_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -17,6 +19,7 @@ class HomePage extends StatelessWidget {
               child: Text("Log out"),
               onPressed: (){
                 AuthProvider().logOut();
+                Navigator.pushReplacement(context, PageTransition(type: PageTransitionType.rightToLeftWithFade, child:LoginScreen()));
               },
             )
           ],

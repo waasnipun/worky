@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:login_test/Database/firebase.dart';
+import 'package:login_test/Home/homePage.dart';
 import 'package:login_test/utilities/constants.dart';
+import 'package:page_transition/page_transition.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -94,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
 
-  Widget _buildRememberMeAndForgotPasswordCheckbox() {
+  Widget _buildRememberMeCheckbox() {
     return Container(
       height: 50.0,
       child: Row(
@@ -116,9 +118,18 @@ class _LoginScreenState extends State<LoginScreen> {
             'Remember me',
             style: kLabelStyle,
           ),
+        ],
+      ),
+    );
+  }
+  Widget _buildForgotPassword() {
+    return Container(
+      height: 50.0,
+      child: Row(
+        children: <Widget>[
            FlatButton(
               onPressed: () => print('Forgot Password Button Pressed'),
-              padding: EdgeInsets.only(left:60,right: 0.0),
+              padding: EdgeInsets.only(right: 0.0),
               child: Text(
                 'Forgot Password?',
                 style: kLabelStyle,
@@ -128,7 +139,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-
   Widget _buildLoginBtn() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10.0),
@@ -143,6 +153,9 @@ class _LoginScreenState extends State<LoginScreen> {
           bool res = await AuthProvider().signInWithEmail(_emailController.text, _passwordController.text);
           if(!res) {
             print("Login failed");
+          }
+          else{
+            Navigator.pushReplacement(context, PageTransition(type: PageTransitionType.rightToLeftWithFade, child:HomePage()));
           }
         },
         padding: EdgeInsets.all(15.0),
@@ -330,7 +343,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 15.0,
                       ),
                       _buildPasswordTF(),
-                      _buildRememberMeAndForgotPasswordCheckbox(),
+                      _buildForgotPassword(),
+                      _buildRememberMeCheckbox(),                      
                       _buildLoginBtn(),
                       _buildSignInWithText(),
                       _buildSocialBtnRow(),
