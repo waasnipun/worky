@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_test/Screens/Start.dart';
 import 'package:login_test/Screens/login_screen.dart';
 import 'package:login_test/Screens/waiting.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -28,7 +29,7 @@ class MainScreen extends StatelessWidget {
         if(snapshot.connectionState == ConnectionState.waiting)
           return SplashPage();
         if(!snapshot.hasData || snapshot.data == null)
-          return LoginScreen();
+          return StartPage();
         return HomePage();
       },
     );

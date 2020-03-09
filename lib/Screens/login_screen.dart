@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
           'Email',
           style: kLabelStyle,
         ),
-        SizedBox(height: 10.0),
+        SizedBox(height: 5.0),
         Container(
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
           'Password',
           style: kLabelStyle,
         ),
-        SizedBox(height: 10.0),
+        SizedBox(height: 5.0),
         Container(
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
@@ -93,23 +93,10 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildForgotPasswordBtn() {
-    return Container(
-      alignment: Alignment.centerRight,
-      child: FlatButton(
-        onPressed: () => print('Forgot Password Button Pressed'),
-        padding: EdgeInsets.only(right: 0.0),
-        child: Text(
-          'Forgot Password?',
-          style: kLabelStyle,
-        ),
-      ),
-    );
-  }
 
-  Widget _buildRememberMeCheckbox() {
+  Widget _buildRememberMeAndForgotPasswordCheckbox() {
     return Container(
-      height: 20.0,
+      height: 50.0,
       child: Row(
         children: <Widget>[
           Theme(
@@ -129,6 +116,14 @@ class _LoginScreenState extends State<LoginScreen> {
             'Remember me',
             style: kLabelStyle,
           ),
+           FlatButton(
+              onPressed: () => print('Forgot Password Button Pressed'),
+              padding: EdgeInsets.only(left:60,right: 0.0),
+              child: Text(
+                'Forgot Password?',
+                style: kLabelStyle,
+              ),
+            ),
         ],
       ),
     );
@@ -136,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildLoginBtn() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 25.0),
+      padding: EdgeInsets.symmetric(vertical: 10.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
@@ -159,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
           'LOGIN',
           style: TextStyle(
             //color: Color(0xFF527DAA),
-            color: Colors.green,
+            color: Colors.yellow,
             letterSpacing: 1.5,
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
@@ -180,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 20.0),
+        SizedBox(height: 10.0),
         Text(
           'Sign in with',
           style: kLabelStyle,
@@ -215,7 +210,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildSocialBtnRow() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 30.0),
+      padding: EdgeInsets.symmetric(vertical: 20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -251,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
               text: 'Don\'t have an Account? ',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18.0,
+                fontSize: 15.0,
                 fontWeight: FontWeight.w400,
               ),
             ),
@@ -259,7 +254,7 @@ class _LoginScreenState extends State<LoginScreen> {
               text: 'Sign Up',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18.0,
+                fontSize: 15.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -281,21 +276,31 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 height: double.infinity,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.green[300],
-                      Colors.green[400],
-                      Colors.green,
-                      Colors.green[600],
-//                      Color(0xFF73AEF5),
-//                      Color(0xFF61A4F1),
-//                      Color(0xFF478DE0),
-//                      Color(0xFF398AE5),
-                    ],
-                    stops: [0.1, 0.4, 0.7, 0.9],
+//                 decoration: BoxDecoration(
+//                   image: new DecorationImage(
+//                     image: new AssetImage("assets/images/background.jpg"),
+//                     fit: BoxFit.cover,
+//                     ),
+//                   // gradient: LinearGradient(
+//                   //   begin: Alignment.topCenter,
+//                   //   end: Alignment.bottomCenter,
+//                   //   colors: [
+//                   //     Colors.green[300],
+//                   //     Colors.green[400],
+//                   //     Colors.green,
+//                   //     Colors.green[600],
+// //                      Color(0xFF73AEF5),
+// //                      Color(0xFF61A4F1),
+// //                      Color(0xFF478DE0),
+// //                      Color(0xFF398AE5),
+//                     ],
+//                     stops: [0.1, 0.4, 0.7, 0.9],
+//                   ),
+                // ),
+                decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage("assets/images/background.jpg"),
+                  fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -305,7 +310,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   physics: AlwaysScrollableScrollPhysics(),
                   padding: EdgeInsets.symmetric(
                     horizontal: 40.0,
-                    vertical: 120.0,
+                    vertical: 80.0,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -314,19 +319,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         'Sign In',
                         style: TextStyle(
                           color: Colors.white,
-                          fontFamily: 'OpenSans',
+                          fontFamily: 'BreeSerif',
                           fontSize: 30.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 30.0),
+                      SizedBox(height: 20.0),
                       _buildEmailTF(),
                       SizedBox(
-                        height: 30.0,
+                        height: 15.0,
                       ),
                       _buildPasswordTF(),
-                      _buildForgotPasswordBtn(),
-                      _buildRememberMeCheckbox(),
+                      _buildRememberMeAndForgotPasswordCheckbox(),
                       _buildLoginBtn(),
                       _buildSignInWithText(),
                       _buildSocialBtnRow(),
