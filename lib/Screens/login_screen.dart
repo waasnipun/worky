@@ -182,11 +182,8 @@ class _LoginScreenState extends State<LoginScreen> {
     return Column(
       children: <Widget>[
         Text(
-          '- OR -',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w400,
-          ),
+          '- or -',
+          style: kLabelStyle,
         ),
         SizedBox(height: 2.0),
         Text(
