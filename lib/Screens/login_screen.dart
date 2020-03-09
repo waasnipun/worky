@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildRememberMeCheckbox() {
     return Container(
-      height: 50.0,
+      height: 22.0,
       child: Row(
         children: <Widget>[
           Theme(
@@ -124,12 +124,12 @@ class _LoginScreenState extends State<LoginScreen> {
   }
   Widget _buildForgotPassword() {
     return Container(
-      height: 50.0,
+      height: 35.0,
       child: Row(
         children: <Widget>[
            FlatButton(
               onPressed: () => print('Forgot Password Button Pressed'),
-              padding: EdgeInsets.only(right: 0.0),
+              padding: EdgeInsets.only(left:150,right: 0.0),
               child: Text(
                 'Forgot Password?',
                 style: kLabelStyle,
@@ -188,7 +188,7 @@ class _LoginScreenState extends State<LoginScreen> {
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 10.0),
+        SizedBox(height: 2.0),
         Text(
           'Sign in with',
           style: kLabelStyle,
@@ -323,7 +323,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   physics: AlwaysScrollableScrollPhysics(),
                   padding: EdgeInsets.symmetric(
                     horizontal: 40.0,
-                    vertical: 80.0,
+                    vertical: 50.0,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -333,14 +333,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'BreeSerif',
-                          fontSize: 30.0,
+                          fontSize: 40.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20.0),
+                      SizedBox(height: 10.0),
                       _buildEmailTF(),
                       SizedBox(
-                        height: 15.0,
+                        height: 10.0,
                       ),
                       _buildPasswordTF(),
                       _buildForgotPassword(),
